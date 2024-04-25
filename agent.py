@@ -31,7 +31,7 @@ def create_rag_agent(file):
 
     prompt = hub.pull("hwchase17/openai-tools-agent")
 
-    llm = ChatOpenAI(temperature=0)
+    llm = ChatOpenAI(openai_api_key=st.secrets["api_key"], temperature=0)
 
 
     agent = create_openai_tools_agent(llm, tools, prompt)
