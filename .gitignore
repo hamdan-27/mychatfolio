@@ -1,0 +1,13 @@
+# secrets
+.streamlit/secrets.toml
+
+# folders
+chat_history/
+__pycache__/
+
+# .py files
+test*.py
+__init__.py
+
+# .ipynb files
+test*.ipynb

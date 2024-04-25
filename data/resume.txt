@@ -1,0 +1,28 @@
+Education:
+Hamdan Mohammad is pursuing a Bachelor of Engineering in Software Engineering from the University of Bolton, expected to graduate in 2024. He completed his senior secondary education (XII) from Mount Litera Zee School, Jamshedpur, with 81.50% in the CBSE board in 2021. He also attended Our Own English High School, Sharjah (Boys Branch) for his secondary (X) education, scoring 84.50% in the CBSE board in 2019.
+
+Work Experience and Internships:
+Hamdan has been working as a Python Development & AI intern at ViewIt since April 2023. During this internship, he developed a virtual real estate agent chatbot using Large Language Models (LLM), innovated with unique features, learned app deployment and hosting with Streamlit Cloud, and developed APIs with Flask and FastAPI. Previously, he worked as an Associate at Ioncure Pvt. Ltd. from May 2022 to December 2022, where he developed an automatic mailing script for mail campaigns with Python, performed web scraping and data entry, managed a team, and learned leadership skills.
+
+Courses and Trainings:
+Hamdan has completed several relevant courses, including the Samsung Innovation Campus UAE Artificial Intelligence Course (Jan 2023 - Mar 2023), which covered AI, Machine Learning, Deep Learning, Statistics, Probability, Calculus, Data Analysis, Preprocessing, and Visualization. He also attended a Web Development course at Shaw Academy (Aug 2021 - Jan 2022), where he learned HTML, CSS, and JavaScript, and developed an online grocery webpage concept.
+
+Projects:
+Among Hamdan's notable projects are the Persona Adaptive AI Chat Application (Sep 2023 - Apr 2024), where he developed an innovative AI chatbot web application using Flask, OpenAI API, and Tailwind CSS. He also created an Attendance Management System (Sep 2023 - Dec 2023) using HTML, CSS, JavaScript, PHP, and MySQL. Other projects include a hospital app and web design on Figma, web scraping an online faculty directory with Python, an automatic mailing software in Python, and a 2D top-down car race game in Python using the Pygame module.
+
+Mock Interview:
+
+Q: Can you tell me about your experience with developing chatbots and working with Large Language Models (LLMs)?
+A: As part of my internship at ViewIt, I developed a virtual real estate agent chatbot using Large Language Models. I worked on integrating unique features like feedback and conversability into the chatbot. This experience allowed me to gain practical knowledge of working with LLMs and developing conversational AI applications.
+
+Q: Can you explain your role and responsibilities during your time as an Associate at Ioncure Pvt. Ltd.?
+A: At Ioncure Pvt. Ltd., I worked as an Associate from May 2022 to December 2022. My primary responsibilities included developing an automatic mailing script for mail campaigns using Python, performing web scraping and data entry tasks, and managing a team. This role helped me develop my leadership skills while enhancing my Python programming abilities.
+
+Q: What motivated you to pursue the Samsung Innovation Campus UAE Artificial Intelligence Course?
+A: I was driven to take the Samsung Innovation Campus UAE Artificial Intelligence Course to gain a comprehensive understanding of AI, Machine Learning, and Deep Learning concepts. The course covered essential topics such as statistics, probability, calculus, data analysis, preprocessing, and visualization, which are crucial for developing AI applications. This knowledge has been invaluable in my projects and internships related to AI and chatbot development.
+
+Q: Can you describe the Attendance Management System project you worked on?
+A: The Attendance Management System was a web application I developed using HTML, CSS, JavaScript, PHP, and MySQL. It featured role-based access control, allowing users to view and create classes, mark attendance, and generate attendance reports. This project helped me enhance my skills in full-stack web development, including front-end technologies like HTML, CSS, and JavaScript, as well as back-end technologies like PHP and MySQL.
+
+Q: What are your future career goals, and how do your skills and experiences align with them?
+A: My future career goal is to become a proficient full-stack developer specializing in AI and machine learning applications. Through my education, internships, and projects, I have gained a strong foundation in programming languages like Python, JavaScript, and PHP, as well as expertise in frameworks like Flask and FastAPI. Additionally, my experience with AI, chatbots, and LLMs positions me well to contribute to the rapidly growing field of conversational AI and intelligent systems. I am eager to continue learning and expanding my skillset to achieve my career aspirations.
