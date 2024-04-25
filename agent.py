@@ -1,3 +1,4 @@
+import streamlit as st
 from langchain.agents import AgentExecutor, create_openai_tools_agent
 from langchain_text_splitters import CharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
@@ -14,7 +15,7 @@ def create_rag_agent(file):
 
     text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
     texts = text_splitter.split_documents(documents)
-    embeddings = OpenAIEmbeddings()
+    embeddings = OpenAIEmbeddings(st.secrets["api_key"])
     db = FAISS.from_documents(texts, embeddings)
 
     retriever = db.as_retriever()
