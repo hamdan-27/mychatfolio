@@ -15,7 +15,7 @@ def create_rag_agent(file):
 
     text_splitter = CharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
     texts = text_splitter.split_documents(documents)
-    embeddings = OpenAIEmbeddings(st.secrets["api_key"])
+    embeddings = OpenAIEmbeddings(openai_api_key=st.secrets["api_key"])
     db = FAISS.from_documents(texts, embeddings)
 
     retriever = db.as_retriever()
