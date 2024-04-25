@@ -127,11 +127,11 @@ with st.sidebar:
 
 
 # Suggested questions
-questions = [
-    'Where do you see yourself in 5 years?',
-    'Introduce the interviewee.',
-    'Tell me about your skills.'
-]
+# questions = [
+#     'Where do you see yourself in 5 years?',
+#     'Introduce the interviewee.',
+#     'Tell me about your skills.'
+# ]
 
 
 def send_button_ques(question):
@@ -159,14 +159,14 @@ for n, msg in enumerate(st.session_state.messages):
     else:
         st.chat_message(msg["role"]).write(msg["content"])
 
-    # Render suggested question buttons
-    buttons = st.container(border=True)
-    if n == 0:
-        for q in questions:
-            button_ques = buttons.button(
-                label=q, on_click=send_button_ques, args=[q],
-                disabled=st.session_state.disabled
-            )
+    # # Render suggested question buttons
+    # buttons = st.container(border=True)
+    # if n == 0:
+    #     for q in questions:
+    #         button_ques = buttons.button(
+    #             label=q, on_click=send_button_ques, args=[q],
+    #             disabled=st.session_state.disabled
+    #         )
     # else:
     #     st.session_state.disabled = True
 
@@ -176,7 +176,7 @@ for n, msg in enumerate(st.session_state.messages):
 
 
 # If user inputs a new prompt or clicks button, generate and draw a new response
-if user_input := st.chat_input('Ask away') or st.session_state['button_question']:
+if user_input := st.chat_input('Ask away'):# or st.session_state['button_question']:
 
     # Write user input
     st.session_state.messages.append(
