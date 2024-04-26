@@ -19,3 +19,7 @@ font = "sans serif"
 
 # Default: 'info'
 level = "info"
+
+[server]
+enableCORS = false
+enableXsrfProtection = false
