@@ -99,9 +99,9 @@ spinner_texts = [
 # APP INTERFACE START #
 
 # Add logo image to the center of page
-col1, col2, col3 = st.columns(3)
-with col2:
-    st.image("https://i.postimg.cc/TwC7cjnL/19dd517c-f09d-48ae-9083-e10f5225e6d2.jpg", width=150)
+# col1, col2, col3 = st.columns(3)
+# with col2:
+#     st.image("https://i.postimg.cc/TwC7cjnL/19dd517c-f09d-48ae-9083-e10f5225e6d2.jpg", width=150)
 
 
 # App Title
