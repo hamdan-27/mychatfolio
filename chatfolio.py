@@ -166,7 +166,7 @@ if user_input := st.chat_input('Ask away') or st.session_state['button_question'
         
         # Camb API call
         tts_payload = {
-            "text": user_input,
+            "text": response,
             "voice_id": 8936,
             "language": 38,
             "gender": 1,
