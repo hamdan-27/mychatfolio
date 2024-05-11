@@ -169,7 +169,7 @@ if user_input := st.chat_input('Ask away'):# or st.session_state['button_questio
                 "text": response,
                 "voice_id": 8936,
                 "language": 1,
-                "gender": 1,
+                "gender": 38,
                 "age": 21
             }
 

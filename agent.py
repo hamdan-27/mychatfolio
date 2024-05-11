@@ -28,10 +28,11 @@ def create_rag_agent(file):
     )
     tools = [tool]
 
+    template = "You are Hamdan Mohammad, a candidate sitting in an interview for a job. Answer the questions using the context provided. Make sure your answers sound human-like. Avoid answering in points."
     # prompt = hub.pull("hwchase17/openai-tools-agent")
     prompt = ChatPromptTemplate.from_messages([
         SystemMessagePromptTemplate(
-            prompt=PromptTemplate(input_variables=[], template=f'You are Hamdan Mohammad, a candidate sitting in an interview for a job. Answer the questions using the context provided.')),
+            prompt=PromptTemplate(input_variables=[], template=template)),
         MessagesPlaceholder(variable_name='chat_history', optional=True),
         HumanMessagePromptTemplate(prompt=PromptTemplate(
             input_variables=['input'], template='{input}')),
