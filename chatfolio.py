@@ -144,7 +144,7 @@ for n, msg in enumerate(st.session_state.messages):
 
 
 # If user inputs a new prompt or clicks button, generate and draw a new response
-if user_input := st.chat_input('Ask away'):# or st.session_state['button_question']:
+if user_input := st.chat_input('Ask away') or st.session_state['button_question']:
 
     # Write user input
     st.session_state.messages.append(
