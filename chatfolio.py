@@ -18,7 +18,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 BASE_URL = "https://client.camb.ai/apis"
-API_KEY = os.getenv("CAMB_AI_KEY")
+API_KEY = st.secrets['camb-ai-key']
 HEADERS = {"headers": {"x-api-key": API_KEY}}
 
 # Set page launch configurations
