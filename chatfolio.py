@@ -18,9 +18,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 BASE_URL = "https://client.camb.ai/apis"
-API_KEY = st.secrets['camb-ai-key']
-HEADERS = {"headers": {"x-api-key": API_KEY}}
-
+os.environ["API_KEY"] = st.secrets['camb-ai-key']
+HEADERS = {"headers": {"x-api-key": os.environ["API_KEY"]}}
+print(st.secrets['camb-ai-key'])
 # Set page launch configurations
 try:
     st.set_page_config(
@@ -161,45 +161,45 @@ if user_input := st.chat_input('Ask away') or st.session_state['button_question'
     with st.spinner(random.choice(spinner_texts)):
         # st.session_state.disabled = True
 
-        try:
-            response = agent.invoke({"input": user_input})["output"]
-            
-            # Camb API call
-            tts_payload = {
-                "text": response,
-                "voice_id": 8936,
-                "language": 1,
-                "gender": 38,
-                "age": 21
-            }
+        # try:
+        response = agent.invoke({"input": user_input})["output"]
+        
+        # Camb API call
+        tts_payload = {
+            "text": "Hello my name is Hamdan Mohammad",
+            "voice_id": 8936,
+            "language": 38,
+            "gender": 1,
+            "age": 21
+        }
 
-            res = requests.post(f"{BASE_URL}/tts", json=tts_payload, **HEADERS)
-            task_id = res.json()["task_id"]
-            print(f"Task ID: {task_id}")
+        res = requests.post(f"{BASE_URL}/tts", json=tts_payload, **HEADERS)
+        print(res.status_code)
+        task_id = res.json()["task_id"]
+        print(f"Task ID: {task_id}")
 
-            with st.spinner('Generating Audio...'):
-                while True:
-                    res = requests.get(f"{BASE_URL}/tts/{task_id}", **HEADERS)
-                    status = res.json()["status"]
-                    print(f"Polling: {status}")
-                    time.sleep(1)
-                    if status == "SUCCESS":
-                        run_id = res.json()["run_id"]
-                        break
+        while True:
+            res = requests.get(f"{BASE_URL}/tts/{task_id}", **HEADERS)
+            status = res.json()["status"]
+            print(f"Polling: {status}")
+            time.sleep(1)
+            if status == "SUCCESS":
+                run_id = res.json()["run_id"]
+                break
 
-                print(f"Run ID: {run_id}")
-                res = requests.get(
-                    f"{BASE_URL}/tts_result/{run_id}", **HEADERS, stream=True)
-                st.audio(BytesIO(res.content), format='audio/wav')
+        print(f"Run ID: {run_id}")
+        res = requests.get(
+            f"{BASE_URL}/tts_result/{run_id}", **HEADERS, stream=True)
+        st.audio(BytesIO(res.content), format='audio/wav')
 
         # Handle the parsing error by omitting error from response
-        except Exception as e:
-            response = str(e)
-            if response.startswith("Could not parse LLM output: `"):
-                response = response.removeprefix(
-                    "Could not parse LLM output: `").removesuffix("`")
-            st.toast(str(e), icon='⚠️')
-            print(str(e))
+        # except Exception as e:
+        #     response = str(e)
+        #     if response.startswith("Could not parse LLM output: `"):
+        #         response = response.removeprefix(
+        #             "Could not parse LLM output: `").removesuffix("`")
+        #     st.toast(str(e), icon='⚠️')
+        #     print("[Error]:",str(e))
 
 
     # Clear button question session state to prevent answer regeneration on rerun
