@@ -114,7 +114,7 @@ def send_button_ques(question):
 
 
 # Welcome message
-welcome_msg = "Welcome to Voicefolio, ask away!"
+welcome_msg = "Welcome to MyChatfolio, ask away!"
 if "messages" not in st.session_state:
     st.session_state['messages'] = [
         {"role": "assistant", "content": welcome_msg}]
@@ -164,33 +164,6 @@ if user_input := st.chat_input('Ask away') or st.session_state['button_question'
         # try:
         response = agent.invoke({"input": user_input})["output"]
         
-        # Camb API call
-        tts_payload = {
-            "text": response,
-            "voice_id": 8936,
-            "language": 38,
-            "gender": 1,
-            "age": 21
-        }
-
-        res = requests.post(f"{BASE_URL}/tts", json=tts_payload, **HEADERS)
-        print(res.status_code)
-        task_id = res.json()["task_id"]
-        print(f"Task ID: {task_id}")
-
-        while True:
-            res = requests.get(f"{BASE_URL}/tts/{task_id}", **HEADERS)
-            status = res.json()["status"]
-            print(f"Polling: {status}")
-            time.sleep(1)
-            if status == "SUCCESS":
-                run_id = res.json()["run_id"]
-                break
-
-        print(f"Run ID: {run_id}")
-        res = requests.get(
-            f"{BASE_URL}/tts_result/{run_id}", **HEADERS, stream=True)
-        st.audio(BytesIO(res.content), format='audio/wav')
 
         # Handle the parsing error by omitting error from response
         # except Exception as e:
