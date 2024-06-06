@@ -39,7 +39,7 @@ def create_rag_agent(file):
         MessagesPlaceholder(variable_name='agent_scratchpad')
     ])
 
-    llm = ChatOpenAI(openai_api_key=st.secrets["api_key"], temperature=0)
+    llm = ChatOpenAI(model='gpt-4o', openai_api_key=st.secrets["api_key"], temperature=0)
 
     agent = create_openai_tools_agent(llm, tools, prompt)
     return AgentExecutor(agent=agent, tools=tools)
